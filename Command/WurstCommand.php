@@ -62,7 +62,7 @@ class WurstCommand extends ContainerAwareCommand
         ;
 
         foreach ($this->sides as $side) {
-            $this->addOption('mit-'.$side, null, InputOption::VALUE_NONE, sprintf('Mit %s?', ucfirst($side)));
+            $this->addOption('with-'.$side, null, InputOption::VALUE_NONE, sprintf('With %s?', ucfirst($side)));
         }
     }
 
@@ -87,7 +87,7 @@ class WurstCommand extends ContainerAwareCommand
         $output->writeln($wurst);
 
         foreach ($this->sides as $side) {
-            if ($input->getOption('mit-'.$side)) {
+            if ($input->getOption('with-'.$side)) {
                 $option = file_get_contents(sprintf(__DIR__.'/../Resources/sides/%s.txt', $side));
                 $output->write($option);
             }

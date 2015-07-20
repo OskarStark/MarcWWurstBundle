@@ -32,7 +32,7 @@ class WurstCommandTest extends WurstCommandTestCase
     public function testSides()
     {
         foreach ($this->sides as $side) {
-            $option = "--mit-$side";
+            $option = "--with-$side";
             $this->commandTester->execute(array(
                 'command' => $this->command->getName(),
                 $option => true
@@ -47,7 +47,7 @@ class WurstCommandTest extends WurstCommandTestCase
     public function testSidesWithAllWurstTypes()
     {
         foreach ($this->sides as $side) {
-            $option = "--mit-$side";
+            $option = "--with-$side";
             foreach ($this->wurstTypes as $wurstType) {
                 $this->commandTester->execute(array(
                     'command' => $this->command->getName(),
